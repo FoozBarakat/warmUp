@@ -5,3 +5,23 @@
 // Using jQuery, create a function, that takes the input from the text field, creates a list item and add it to the unordered list, then add a class to the added item alternatively (So first time Class1 then next time Class2 then Class1 and repeat)
 
 // Good Luck!
+
+var count = 0;
+
+
+
+$('button').on('click', function() {
+	// var acc = {};
+	// acc[count] = $('input').val();
+	var value = $('input').val();	
+	
+	$('ul').append('<li></li>');
+	
+	$('li').text(value);
+	
+	++count;
+	
+	$('li').addClass('class'+count);
+});
+
+

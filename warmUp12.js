@@ -22,3 +22,46 @@ Technical Details
     -The maximum size of a range will be 100 integers
     -The starting number of a range will be: 0 < n < 100
  */
+
+ function mysteryRange(inputString, len) {
+    var result = '';
+    var arr = inputString.split('');
+    var range = len - 1;
+    
+    for (var i = 0; i < arr.length; i++) {
+        if ( (len - arr[i]) > (range/2) ) {
+            var x = [];
+            x.push(arr[i], arr[i+1]);
+            i++;
+            var s = x.join("");
+            result = result + " " + s;
+        } else {
+            var y = [];
+            y.push(arr[i]);           
+            var s = y.join("");
+            result = result+ " " + s;
+        }
+    }
+
+    var arrResult = [];
+    var arr2 = result.split(' ');
+    var smallest = arr2[0];
+    console.log(arr2);
+    var largest = arr2[0];
+    for (var i = 0; i < arr2.length; i++) {
+        // i need to convert the string to number before combare 
+        // it but the time is finished :( i did not try it 
+        if ( largest < parseInt(arr2[i]) ) {
+            largest = arr2[i];
+        }
+
+        if ( smallest >= parseInt(arr2[i]) ) {
+            smallest = arr2[i];
+        }           
+    }
+
+    arrResult.push(smallest, largest);
+    console.log(arrResult);
+
+    return 'The range is ' + arrResult + '\n' + result;
+ }

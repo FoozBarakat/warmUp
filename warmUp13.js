@@ -31,3 +31,57 @@
             filter_list([1,'a','b',0,15]) == [1,0,15]
             filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 */
+
+// Q1
+var obj = {
+            i: 1,
+            v: 5,
+            x: 10,
+            l: 50,
+            c: 100,
+            d: 500,
+            m: 1000
+          }
+
+function solution(string) {
+  var result = 0;
+  
+  for (var i =0; i < string.length; i++) {
+
+    for (var key in obj) {
+      if (string[i].toLowerCase() === key ) {
+        result += obj[key];
+       }
+    }
+  }
+  return result;
+}
+
+console.log( solution('XXI') );
+
+// Q2
+// we could use reduce to solve this one i think it less code but ther is no time to redo it :)
+function toCamelCase(string) {
+var result = string[0];
+
+for (var i = 1; i < string.length; i++) {
+  
+
+  if (string[i] === '-' || string[i] === '_') {
+     ++i;
+     result += string[i].toUpperCase();
+    } else {
+      result += string[i];
+    }  
+}
+
+return result;
+
+}
+
+console.log( toCamelCase("the-stealth-warrior") );
+
+// Q3
+function filter_list(array) {
+  return array.filter(elment => typeof elment === 'number');
+}

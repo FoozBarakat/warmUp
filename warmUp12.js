@@ -63,5 +63,5 @@ Technical Details
     arrResult.push(smallest, largest);
     console.log(arrResult);
 
-    return 'The range is ' + arrResult + '\n' + result;
+    //return 'The range is ' + arrResult + '\n' + result;
  }

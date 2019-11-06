@@ -16,3 +16,39 @@
 // Constraints:
 // 1 <= text.length <= 10^4
 // text consists of lower case English letters only.
+
+function instances(string) {
+	var result = 0;
+	var word = 'balloon';
+	var arr = word.split('');
+	var charCount = 0;
+	
+	for (var i = 0; i < string.length; i++) {
+
+		for (var j = 0; j < arr.length; j++) {
+			if (string[i] === arr[j]) {
+				charCount++;
+				//console.log(charCount);
+			}
+
+		}
+		
+		if (charCount >= arr.length) {
+
+			if (charCount % arr.length === 0) {
+				result = Math.floor(charCount / arr.length) - 1;
+				//console.log(result)
+		} else {
+				result =  Math.floor(charCount / arr.length)
+			}
+		}
+	}
+
+	return result;
+}
+
+//console.log( instances('nlaebolko') );
+
+console.log( instances('loonbalxballpoon') );
+
+//console.log( instances('RebootKamp') );

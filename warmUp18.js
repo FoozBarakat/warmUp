@@ -10,3 +10,37 @@
 
 // input   =  "aaaaaaaaaaaa"
 // result  =  "123456789101112"
+
+//////////////////////////////////////////////////////
+
+function occurence1(string) {
+
+var count = 0;
+var holdChar; 
+var result = '';
+
+for (var i = 0; i < string.length; i++) {
+	holdChar = string[i];
+	
+	for (var j = 0; j < string.length; j++) {
+		if (string[j] === holdChar[i]) {
+			count++;			
+		}	
+	}	
+	result.push(count);
+}
+
+return result;
+}
+
+function occurence2(string) {
+	var arr = string.split("")
+	var result = [];
+	var num = 0;
+	for (var i = 0; i < string.length; i++) {
+	result = arr.filter(element => element === string[i])
+	num = result.length;
+	}
+	
+	return num;
+}
